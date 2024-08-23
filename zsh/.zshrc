@@ -61,8 +61,6 @@ eval "$(zoxide init --cmd cd zsh)"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 
-export PATH="$PATH:$HOME/dev/go/go-cli-tools/mytime"
-
 export EDITOR=nvim
 
 export GOPATH=$HOME/go-workspace
