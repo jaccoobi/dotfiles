@@ -1,0 +1,9 @@
+alias cd="z"
+
+alias ls="exa"
+alias ll="exa -a --long --header --git"
+
+alias cat="bat"
+
+alias hollywood="sudo docker run --rm -it bcbcarl/hollywood"
+

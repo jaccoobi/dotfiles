@@ -14,16 +14,11 @@ compinit
 # End of lines added by compinstall
 
 # Add in the zsh aliases
-alias cd="z"
-
-alias ls="exa"
-alias ll="exa -a --long --header --git"
-
-alias shutdown="sudo shutdown now"
-
-alias cat="bat"
-
-alias hollywood="sudo docker run --rm -it bcbcarl/hollywood"
+if [[ -f ~/.zshrc_aliases ]]; then
+  source ~/.zshrc_aliases
+else
+  touch ~/.zshrc_aliases
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
