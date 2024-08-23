@@ -57,8 +57,3 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 
 export EDITOR=nvim
-
-export GOPATH=$HOME/go-workspace
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-
