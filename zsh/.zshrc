@@ -47,10 +47,21 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Enable starship
 eval "$(starship init zsh)"
 
-eval "$(thefuck --alias)"
-
 eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+FILES_TO_EXCLUDE='.cache,.cargo,dotfiles,.git,go,.local,.mozilla'
+source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='fd -f'
+export FZF_CTRL_T_OPTS='--walker-skip ${FILES_TO_EXCLUDE} -m --preview="bat -n --color=always {}"'
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ${FILES_TO_EXCLUDE} . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ${FILES_TO_EXCLUDE} . "$1"
+}
 
 export EDITOR=nvim
+
+export PATH=$PATH:/usr/local/go/bin
