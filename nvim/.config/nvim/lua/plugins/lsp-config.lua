@@ -33,25 +33,14 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.lua_ls.setup({
-<<<<<<< HEAD
 				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-=======
-        capabilities = capabilities
-      })
-      lspconfig.gopls.setup({
-        capabilities = capabilities
-      })
       lspconfig.clangd.setup({
         capabilities = capabilities
       })
->>>>>>> d825321 (Added clangd lsp)
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
